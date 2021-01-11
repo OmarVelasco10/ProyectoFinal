@@ -1,0 +1,40 @@
+.headerMain{
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 1%;
+}
+.fooderMain{
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 1%;
+}
+.customPaddingTop{
+    padding-top: 2%;
+}
+
+.PaddingTop{
+    padding-top: 2%;
+    text-align: center;
+}
+#hidden_div{
+    display: none;
+}
+.displayDefault{
+    display:none;
+}
+.div1{
+    background-color: tomato;
+    padding: 2%;
+    display: inline-block;
+    width: 48%;
+}
+.div2{
+    background-color: turquoise;
+    padding: 2%;
+    display: inline-block;
+    width: 48%;
+}
+.btEnviar{
+    padding-top: 2%;
+
+}

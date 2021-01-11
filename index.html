@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Elección de actividad</title>
+</head>
+<body>
+    
+    <div>
+        <div>
+          <!--header-->
+          <div class="headerMain">
+              <h1>Torneo 7</h1>
+          </div>
+        </div>
+        <div>
+            <!--content-->
+            <div class="container customPaddingTop" >
+                <h1>Opciones de navegación</h1>
+                <div>
+                    <div class="div1">
+                        <select class="form-select " aria-label="Default select example"  onchange="showDiv('hidden_div_',this, value)">
+                            <option selected>Opciones...</option>
+                            <option value="0">Equipos</option>
+                            <option value="1">Estadisticas</option>
+                            <option value="2">Jugadores</option>
+                          </select>
+                    </div>
+                    <div class="div2">
+                        <h3>hora de mi api</h3>
+                    </div>
+                </div>
+                <div class="customPaddingTop">
+                    <div id="hidden_div_0" class="displayDefault">
+                        <h3>Lista de Equipos</h3>
+                        <div style="float: right;">
+                          <a href="" type="button" class="btn btn-success">
+                            agregar nuevo
+                          </a>
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">idEquipo</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Ciudad</th>
+                                <th scope="col">Uniforme</th>
+                                <th scope="col">acciones</th>
+
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>
+                                  <a type="button" class="btn btn-primary">
+                                    editar
+                                  </a>
+                                  <a type="button" class="btn btn-danger">
+                                    eliminar
+                                  </a>
+                                </td>
+                                
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div id="hidden_div_1" class="displayDefault">
+                        <h3>Estadistica de Jugadores</h3>
+
+                    </div>
+                    <div id="hidden_div_2" class="displayDefault">
+                        <h3>Jugadores</h3>
+
+                    </div>
+                </div>
+            </div>
+            
+
+
+        </div>
+           <div >
+            <!--Fooder-->
+            <div class="fooderMain">
+
+            </div>
+
+          </div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
