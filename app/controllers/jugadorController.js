@@ -1,9 +1,9 @@
-const mysqlConnection=require('../bd/database');
+const mysqlConnection=require('../../bd/database');
 var router = require('express').Router()
-const controller={};
+//const controller={};
 
 module.exports={
-    controller.listar = (req,res) => {
+    listar:(req,res) => {
         res.getConnection((err,conn)=> {
             if(err) {
                 res.json(err);
@@ -15,7 +15,7 @@ module.exports={
         });
     },
 
-    controller.agregar = (req,res) => {
+    agregar: (req,res) => {
         const datos = req.body;
         req.getConnection((err,conn)=> {
             if(err) {
@@ -27,7 +27,7 @@ module.exports={
             }
         });
     }, 
-    controller.eliminar = (req,res) => {
+    eliminar : (req,res) => {
         const {id} = req.params;
         req.getConnection((err,conn) =>{
             conn.query('delete from jugadores where id = ?',[id],(err,jugadores) =>{
@@ -35,7 +35,7 @@ module.exports={
             })
         });
     },
-    controller.actualizar = (req,res) =>{
+    actualizar : (req,res) =>{
         const {id} = req.params;
         const datos = req.body;
         req.getConnection((err,conn) => {
@@ -45,6 +45,6 @@ module.exports={
         });
     }
 };
-module.exports=JugadorController
+module.exports=jugadorController
 
 
