@@ -25,7 +25,7 @@ const myConnection = require('express-myconnection');
 
 const app=express();
 /*importación de las rutas*/
-const jugadores=require('app/routes/jugadores');
+const jugadores=require('./app/routes/jugadores');
 /*configuracion*/
 app.set('port', process.env.PORT || 8000);
 app.set('view engine', 'ejs');
