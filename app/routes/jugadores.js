@@ -1,7 +1,7 @@
 var express = require('express');
 var jugadorController=require('../controllers/jugadorController');
 var router = require('express').Router()
-const mysqlConnection=require('../database');
+const mysqlConnection=require('../bd/database');
 
 router.get('/',function(req,res) {
     jugadorController.listar();

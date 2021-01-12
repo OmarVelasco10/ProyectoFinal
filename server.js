@@ -1,4 +1,4 @@
-/*var express = require('express') //llamamos a Express
+var express = require('express') //llamamos a Express
 var app = express()       
 var bodyParser = require('body-parser')     
 
@@ -16,18 +16,19 @@ app.use('/torneo', router)
  
 //arrancamos el servidor
 app.listen(port)
-console.log('API escuchando en el puerto ' + port)*/
-const express=require('express');
+console.log('API escuchando en el puerto ' + port)
+/*const express=require('express');
 const path = require('path');
 const morgan = require('morgan');
 const mysql = require('mysql');
 const myConnection = require('express-myconnection');
+const router = require ('./app/routes')
 
 const app=express();
 /*importación de las rutas*/
-const jugadores=require('./app/routes/jugadores');
+/*const jugadores=require('./app/routes/jugadores');
 /*configuracion*/
-app.set('port', process.env.PORT || 8000);
+/*app.set('port', process.env.PORT || 8000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -50,4 +51,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Correr server
 app.listen(app.get('port'), () => {
     console.log('El servidor esta corriendo en el puerto ' + app.get('port'));
-});
+});*/

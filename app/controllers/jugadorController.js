@@ -1,5 +1,7 @@
 const mysqlConnection=require('../../bd/database');
+const express=require('express');
 var router = require('express').Router()
+const jugadorController = require('jugadorController');
 //const controller={};
 
 module.exports={
