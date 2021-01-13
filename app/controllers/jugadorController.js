@@ -1,12 +1,19 @@
-const mysqlConnection=require('../../bd/database');
-const express=require('express');
-var router = require('express').Router()
-const jugadorController = require('jugadorController');
+const mysql=require('../../bd/database');
+
+
 //const controller={};
 
 module.exports={
     listar:(req,res) => {
-        res.getConnection((err,conn)=> {
+
+        mysql.query('select * from datos',(err,rows,fields)=>{
+            if(!err){
+                res.json(rows);
+            } else{
+                res.json(err);
+            }
+        })
+        /*res.getConnection((err,conn)=> {
             if(err) {
                 res.json(err);
             } else {
@@ -14,11 +21,19 @@ module.exports={
                     res.redirect('/');
                 }
             }
-        });
+        });*/
     },
 
     agregar: (req,res) => {
-        const datos = req.body;
+        console.log(req.body);
+        mysql.query('insert into datos SET ?',req.body,(err,rows,fields)=>{
+            if(!err){
+                res.json(rows);
+            }else{
+                res.json(err);
+            }
+        })
+       /* const datos = req.body;
         req.getConnection((err,conn)=> {
             if(err) {
                 res.json(err);
@@ -27,26 +42,44 @@ module.exports={
                     res.redirect('/');
                 });
             }
-        });
+        });*/
     }, 
     eliminar : (req,res) => {
         const {id} = req.params;
+        mysql.query('delete from jugadores where id = ?',[id],(err,rows,fields) =>{
+            if(!err){
+                res.json(rows);
+            }else{
+                res.json(err);
+            }
+        
+        })
+        /*  const {id} = req.params;
         req.getConnection((err,conn) =>{
             conn.query('delete from jugadores where id = ?',[id],(err,jugadores) =>{
                 res.redirect('/');
             })
-        });
+        });*/
     },
     actualizar : (req,res) =>{
         const {id} = req.params;
+        const datos = req.body;
+        mysql.query('update jugadores set ? where id = ?',[datos,id],(err,rows,fields) =>{
+            if(!err){
+                res.json(rows);
+            }else{
+                res.json(err);
+            }
+        })
+                /* const {id} = req.params;
         const datos = req.body;
         req.getConnection((err,conn) => {
             conn.query('update jugadores set ? where id= ?',[datos,id], (err,jugadores) =>{
                 res.redirect('/');
             });
-        });
+        });*/
     }
 };
-module.exports=jugadorController
+
 
 

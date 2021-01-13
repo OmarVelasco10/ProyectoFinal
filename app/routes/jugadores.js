@@ -1,21 +1,21 @@
 var express = require('express');
 var jugadorController=require('../controllers/jugadorController');
 var router = require('express').Router()
-const mysqlConnection=require('../bd/database');
+
 
 router.get('/',function(req,res) {
-    jugadorController.listar();
+    jugadorController.listar(req,res);
 })
 
 router.post('/agregar', function(req,res){
-    jugadorController.agregar();
+    jugadorController.agregar(req,res);
 })
 
 router.put('/actualizar/:id', function(req,res) {
-    jugadorController.actualizar();
+    jugadorController.actualizar(req,res);
 }) 
 
 router.delete('/eliminar/:id', function(req,res){
-    jugadorController.eliminar();
+    jugadorController.eliminar(req,res);
 })
 module.exports = router
