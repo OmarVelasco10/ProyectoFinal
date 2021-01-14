@@ -6,7 +6,7 @@ const mysql=require('../../bd/database');
 module.exports={
     listar:(req,res) => {
 
-        mysql.query('select * from datos',(err,rows,fields)=>{
+        mysql.query('select * from jugadores',(err,rows,fields)=>{
             if(!err){
                 res.json(rows);
             } else{
@@ -26,7 +26,7 @@ module.exports={
 
     agregar: (req,res) => {
         console.log(req.body);
-        mysql.query('insert into datos SET ?',req.body,(err,rows,fields)=>{
+        mysql.query('insert into jugadores SET ?',req.body,(err,rows,fields)=>{
             if(!err){
                 res.json(rows);
             }else{
