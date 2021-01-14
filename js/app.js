@@ -22,8 +22,8 @@ btnAdd.addEventListener('click',(e)=>{
 })
 
 /*boton de actualizar*/
-const btnAdd=document.getElementById('btnActualizar');
-btnAdd.addEventListener('click',(e)=>{
+const btnPut=document.getElementById('btnActualizar');
+btnPut.addEventListener('click',(e)=>{
     let idd= req.params.id;
     let nombred, posiciond, nacionalidadd,id_equiposd;
     nombred=document.getElementById("nombre").value;
